@@ -54,25 +54,65 @@
                 android:background="#ffffff"
                 android:orientation="horizontal">
 
-                <Button
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_items"
+                    app:cardElevation="8dp"
                     android:onClick="openofferdonation"
-                    android:text="Donation\nOffered" />
+                    android:text="Donation\nOffered">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/donate1"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Donation \n Offered"
+                            android:textSize="20dp"
+                            android:layout_marginTop="10dp"
+                            android:gravity="bottom||center_horizontal"
+                            />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
 
-                <Button
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_items"
+                    app:cardElevation="8dp"
                     android:onClick="openRDonationRequested"
-                    android:text="Donations requested" />
+                    android:text="Donations requested" >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/donate2"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Donations \n Requested"
+                            android:textSize="20dp"
+                            android:layout_marginTop="10dp"
+                            android:gravity="bottom||center_horizontal"
+                            />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -81,25 +121,63 @@
                 android:background="#ffffff"
                 android:orientation="horizontal">
 
-                <Button
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_items"
-                    android:onClick="openChatboard"
-                    android:text="CHAT WITH USERS" />
+                    android:onClick="openChatboard">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/donation3"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Chat with \n Donors"
+                            android:textSize="20dp"
+                            android:layout_marginTop="10dp"
+                            android:gravity="bottom||center_horizontal"
+                            />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
 
-                <Button
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_items"
-                    android:onClick="onExit"
-                    android:text="Quit" />
+                    android:onClick="onExit">
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:orientation="vertical"
+                      android:layout_height="match_parent">
+                      <ImageView
+                          android:layout_width="100dp"
+                          android:layout_height="100dp"
+                          android:layout_gravity="center"
+                          android:src="@drawable/donation4"
+                          />
+                      <TextView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:text="Exit \n Application"
+                          android:textSize="20dp"
+                          android:layout_marginTop="10dp"
+                          android:gravity="bottom||center_horizontal"
+                          />
+                  </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
 
         </LinearLayout>
