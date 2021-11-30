@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:orientation="vertical"
+    android:background="#8603DAC5"
+    android:padding="20dp">
+
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="176dp"
+        android:layout_height="165dp"
+        android:background="@drawable/ic_baseline_person_24"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/slogan_name"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_horizontal"
+        android:text="Sign In to continue"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/linearback"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image">
+
+        <EditText
+            android:id="@+id/emailaddresslg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/emicon"
+            android:drawablePadding="10dp"
+            android:hint="enter your email"
+            android:background="@drawable/edittextback"
+            android:textColorHint="#4A494C"/>
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:id="@+id/passwordlg"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/passicon"
+            android:inputType="textPassword"
+            android:hint="enter your password"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittextback"
+            android:drawablePadding="10dp"
+            android:textColorHint="#4A494C"/>
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/pbarlogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:visibility="visible"
+            style="@style/SpinKitView.Large.DoubleBounce"/>
+
+        <TextView
+            android:id="@+id/resetpassword"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center|center_horizontal"
+            android:layout_marginStart="0dp"
+            android:onClick="openReset"
+            android:text="Forgot Password?  RESET"
+            android:textColor="#000" />
+
+        <Button
+            android:id="@+id/loginbtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#000"
+            android:fontFamily="@font/aclonica"
+            android:gravity="center"
+            android:text="Log in"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_margin="5dp"
+            android:background="#00000000"
+            android:elevation="0dp"
+            android:text="New User?     SIGN UP"
+            android:textColor="#000" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
