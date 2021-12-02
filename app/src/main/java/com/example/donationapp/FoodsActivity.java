@@ -82,7 +82,6 @@ Button button6,imageb;
         imageb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 openimageform();
             }
         });

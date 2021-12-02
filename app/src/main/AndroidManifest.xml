@@ -11,28 +11,28 @@
         android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".Requestdonation"></activity>
         <activity android:name=".Rquestdonation" />
-        <activity android:name=".AdminPortal" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".LogsActivity" />
         <activity android:name=".ChatboardActivity" />
         <activity android:name=".DonationOfferActivity" />
         <activity android:name=".FoodsActivity" />
         <activity android:name=".MpesaActivity" />
         <activity android:name=".ClothesActivity" />
-        <activity android:name=".DonorPerson" />
+        <activity android:name=".AdminPortal" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".ShowDonReq" />
         <activity android:name=".AddDonReq" />
         <activity android:name=".CoronaInfo" />
-        <activity android:name=".DonationRequests" />
+        <activity android:name=".DonationRequests"/>
         <activity android:name=".Donation" />
-        <activity android:name=".ResetPassActivity" />
+        <activity android:name=".ResetPassActivity"/>
         <activity android:name=".valuedactivity" />
         <activity android:name=".SignUp" />
         <activity
             android:name=".OnBoardingScreen"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name=".DonorPerson"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
