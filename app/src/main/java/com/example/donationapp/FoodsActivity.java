@@ -2,8 +2,12 @@ package com.example.donationapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +32,7 @@ public class FoodsActivity extends AppCompatActivity {
 ImageButton backB;
 TextView textView,textView13,textView14,textView16,textimage;
 Button button6,imageb;
+ImageView previewImage;
  private EditText editTextTextPersonName4, editTextTextPersonName6, editTextTextPersonName8;
  FirebaseDatabase firebaseDatabase;
 //creating variables for  our reference for firebase
@@ -38,6 +44,7 @@ Button button6,imageb;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foods);
+        previewImage=findViewById(R.id.previewImage);
         editTextTextPersonName4 = findViewById(R.id.editTextTextPersonName4);
         editTextTextPersonName6 = findViewById(R.id.editTextTextPersonName6);
         editTextTextPersonName8 = findViewById(R.id.editTextTextPersonName8);
@@ -82,11 +89,24 @@ Button button6,imageb;
         imageb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openimageform();
+                checkPermission(
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        IMAGE_CODE);
             }
         });
     }
 
+    // Function to check and request permission
+    public void checkPermission(String permission, int requestCode)
+    {
+        // Checking if permission is not granted
+        if (ContextCompat.checkSelfPermission(getApplicationContext(), permission) == PackageManager.PERMISSION_DENIED) {
+            ActivityCompat.requestPermissions(FoodsActivity.this, new String[] { permission }, requestCode);
+        }
+        else {
+            openimageform();
+        }
+    }
     private void openimageform() {
         Intent intent=new Intent();
         intent.setType("image/*");
@@ -118,7 +138,42 @@ Button button6,imageb;
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode==IMAGE_CODE && resultCode==RESULT_OK && data !=null && data.getData() !=null){
             imageuri=data.getData();
+            previewImage.setImageURI(imageuri);
         }
     }
+
+    // This function is called when user accept or decline the permission.
+// Request Code is used to check which permission called this function.
+// This request code is provided when user is prompt for permission.
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions,
+                                           @NonNull int[] grantResults)
+    {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode ==IMAGE_CODE) {
+
+            // Checking whether user granted the permission or not.
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                // Showing the toast message
+                openimageform();
+            }
+            else {
+                Toast.makeText(getApplicationContext(), "Storage Permission Denied", Toast.LENGTH_SHORT).show();
+            }
+        }
+        else if (requestCode == 2) {
+            if (grantResults.length > 0
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(getApplicationContext(), "Storage Permission Granted", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Toast.makeText(getApplicationContext(), "Storage Permission Denied", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
 }
 
