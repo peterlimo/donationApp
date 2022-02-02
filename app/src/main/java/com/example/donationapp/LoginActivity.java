@@ -111,23 +111,19 @@ public class LoginActivity extends AppCompatActivity {
 
                       }
                   });
-
-////                                    if (firebaseAuth.getCurrentUser().isEmailVerified()) {
-//                                        dialoglogin.dismiss();
-//                                        Toast.makeText(LoginActivity.this, "Logged In successfully", Toast.LENGTH_SHORT).show();
-//                                        Intent intent = new  Intent(LoginActivity.this,valuedactivity.class);
-//                                        startActivity(intent);
-//                                        finish();
-//
-////                                    } else if(!firebaseAuth.getCurrentUser().isEmailVerified())
-////                                    {
-////                                        Toast.makeText(LoginActivity.this, "Please Verify your email first", Toast.LENGTH_SHORT).show();
-////                                    }
+                            if (firebaseAuth.getCurrentUser().isEmailVerified()) {
+    dialoglogin.dismiss();
+                                     Toast.makeText(LoginActivity.this, "Logged In successfully", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new  Intent(LoginActivity.this,valuedactivity.class);
+                                     startActivity(intent);
+                                    finish();
+                                  }
+                                    else if(!firebaseAuth.getCurrentUser().isEmailVerified()){
+                                     Toast.makeText(LoginActivity.this, "Please Verify your email first", Toast.LENGTH_SHORT).show();
+                                   }
                                 }
                                 else {
-
                                     Toast.makeText(LoginActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
-
                                 }
                                 dialoglogin.dismiss();
                             }

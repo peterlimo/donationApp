@@ -17,7 +17,13 @@
         android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".Requestdonation"/>
         <activity android:name=".Rquestdonation" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".LogsActivity" />
         <activity android:name=".ChatboardActivity" />
         <activity android:name=".DonationOfferActivity" />
@@ -39,13 +45,7 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".DonorPerson"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity
             android:name=".MapsActivity"
             android:label="Map">
